@@ -1,1 +1,16 @@
+<%= form_for(@post) do |f| %>
+<p>
+<%=f.label :title  %>
+<%= f.text_area :title %>
+</p>
 
+<p>
+<%=f.label :content  %>
+<%= f.text_area :content %>
+</p>
+
+<%= f.collecion_check_boxes(:category_ids, Category.all, :id, :downcase_name) %>
+
+<%= f.submit %>
+<% end %>
+ 
